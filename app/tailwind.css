@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .heading-100 {
+    @apply text-3xl leading-10 md:text-5xl md:leading-[4rem]
+  }
+
+  .heading-200 {
+    @apply text-2xl leading-8 md:text-3xl md:leading-[2.5rem]
+  }
+}
+
+main {
+  @apply max-w-largest-screen m-auto
+}
