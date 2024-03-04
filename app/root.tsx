@@ -19,7 +19,9 @@ export const links: LinksFunction = () => [
 ];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return json({ user: await getUser(request) });
+  return json({
+    user: await getUser(request)
+  });
 };
 
 export default function App() {
@@ -31,7 +33,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body className="h-full bg-bg-200">
         <Outlet />
         <ScrollRestoration />
         <Scripts />

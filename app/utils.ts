@@ -74,3 +74,19 @@ export function useUser(): User {
 export function validateEmail(email: unknown): email is string {
   return typeof email === "string" && email.length > 3 && email.includes("@");
 }
+
+export function shortenText(text: string, limit: number = 240) {
+
+  if (text && text.length > limit) {
+    // Use a regular expression to find the end of the sentence within the first 'limit' characters
+    const regex = new RegExp(`^(.*?[.!?])\\s`);
+    const match = text.substring(0, limit).match(regex);
+
+    // If a sentence end is found, clip the text at that point; otherwise, clip at the specified limit
+    const clippedText = match ? match[1] : text.substring(0, limit);
+
+    return clippedText;
+  }
+
+  return text;
+}
