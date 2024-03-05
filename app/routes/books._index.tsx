@@ -1,21 +1,21 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+
 import BookCard from "~/components/BookCard/BookCard";
 import Card from "~/components/Card/Card";
-
-import { requireUserId } from "~/session.server";
+import { IBooksResponse } from "~/types/books";
 
 const maxResults = 16
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const userId = await requireUserId(request);
+  console.log(request)
   // const noteListItems = await getNoteListItems({ userId });
   // return json({ noteListItems });
   try {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${'Harry+Potter'}&startIndex=${1}&maxResults=${maxResults}&key=${process.env.GOOGLE_BOOKS_API_KEY}`);
 
-    const books: TBooksResponse = await response.json()
+    const books: IBooksResponse = await response.json()
 
     return json({
       books

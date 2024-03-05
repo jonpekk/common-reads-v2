@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+
 import { breakpoints } from "./constants";
 
 export default {

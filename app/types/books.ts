@@ -1,15 +1,17 @@
-type TBooksResponse = {
+// eslint-disable @typescript-eslint/no-unused-vars
+
+export interface IBooksResponse {
   items: IBook[];
   kind: string;
   totalItems: number
 }
 
-interface IBook {
+export interface IBook {
   volumeInfo: IVolumeInfo;
   id: string;
 }
 
-interface IVolumeInfo {
+export interface IVolumeInfo {
   searchInfo: TBookSearchInfo;
   imageLinks: TBookImages;
   industryIdentifiers: TBookIdentifier[];
@@ -26,17 +28,17 @@ interface IVolumeInfo {
   subtitle: string;
 }
 
-type TBookSearchInfo = {
+export interface TBookSearchInfo {
   textSnippet: string;
   selfLink: string;
 }
 
-type TBookImages = {
+export interface TBookImages {
   smallThumbnail: string;
   thumbnail: string;
 }
 
-type TBookIdentifier = {
+export interface TBookIdentifier {
   type: string;
   identifier: string;
 }
