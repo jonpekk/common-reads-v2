@@ -75,7 +75,7 @@ export function validateEmail(email: unknown): email is string {
   return typeof email === "string" && email.length > 3 && email.includes("@");
 }
 
-export function shortenText(text: string, limit: number = 240) {
+export function shortenText(text: string, limit = 240) {
 
   if (text && text.length > limit) {
     // Use a regular expression to find the end of the sentence within the first 'limit' characters

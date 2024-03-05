@@ -1,4 +1,3 @@
-import type { LoaderFunctionArgs } from "@remix-run/node";
 import { Outlet } from "@remix-run/react";
 
 

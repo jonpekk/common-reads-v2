@@ -1,12 +1,12 @@
 import { Link } from "@remix-run/react"
 
-type TLinkButtonProps = {
+interface ILinkButtonProps {
   href: string,
   type?: 'primary' | 'secondary',
   children: React.ReactNode
 }
 
-function LinkButton({ href, type, children }: TLinkButtonProps) {
+function LinkButton({ href, type, children }: ILinkButtonProps) {
 
   let buttonBackground = 'bg-primary-200'
 

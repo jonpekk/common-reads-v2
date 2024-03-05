@@ -1,9 +1,9 @@
 
-type CardProps = {
+interface ICardProps {
   children: React.ReactNode
 }
 
-function Card({ children }: CardProps) {
+function Card({ children }: ICardProps) {
   return (
     <div
       className="p-4 mx-2 my-6 rounded relative md:grid-cols-2 lg: grid-cols-3 bg-bg-100"

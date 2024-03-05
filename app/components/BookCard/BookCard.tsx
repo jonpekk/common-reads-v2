@@ -1,14 +1,17 @@
-import { shortenText } from "~/utils"
-import LinkButton from "../Button/LinkButton"
-import { useWindowSize } from "~/hooks/useWindowQuery"
-import { breakpoints } from "./../../../constants"
 import { useMediaQuery } from "usehooks-ts"
 
-type TBookCardProps = {
+import { shortenText } from "~/utils"
+
+import LinkButton from "../Button/LinkButton"
+
+import { breakpoints } from "./../../../constants"
+
+
+interface IBookCardProps {
   book: IVolumeInfo
 }
 
-function BookCard({ book }: TBookCardProps) {
+function BookCard({ book }: IBookCardProps) {
 
   const isMediaXs = useMediaQuery(`(max-width: ${breakpoints.xxs})`, { defaultValue: false })
 
