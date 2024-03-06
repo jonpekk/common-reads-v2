@@ -1,6 +1,7 @@
 import { useMediaQuery } from "usehooks-ts"
 
-import { shortenText } from "~/utils"
+import { IVolumeInfo } from "~/types/books"
+import { generateBookSlug, shortenText } from "~/utils"
 
 import LinkButton from "../Button/LinkButton"
 
@@ -9,9 +10,10 @@ import { breakpoints } from "./../../../constants"
 
 interface IBookCardProps {
   book: IVolumeInfo
+  id: string
 }
 
-function BookCard({ book }: IBookCardProps) {
+function BookCard({ book, id }: IBookCardProps) {
 
   const isMediaXs = useMediaQuery(`(max-width: ${breakpoints.xxs})`, { defaultValue: false })
 
@@ -32,7 +34,7 @@ function BookCard({ book }: IBookCardProps) {
           </div>
         </div>
         <div className="flex justify-between xs:justify-around mt-auto sm:justify-end sm:gap-4">
-          <LinkButton href="/books">
+          <LinkButton href={`/books/${generateBookSlug(book.title, id)}`}>
             Test Primary
           </LinkButton>
           <LinkButton href="/books" type='secondary'>

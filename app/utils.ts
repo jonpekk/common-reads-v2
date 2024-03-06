@@ -90,3 +90,15 @@ export function shortenText(text: string, limit = 240) {
 
   return text;
 }
+
+
+export function generateBookSlug(string: string, param: string): string {
+  const stringWithNoSpecials = string.replace(/[!@#$%^&*,/:]/g, "");
+  const stringWithNoSpaces = stringWithNoSpecials.replace(/[" "]/g, "-")
+
+  const url = `${stringWithNoSpaces}__${param}`
+
+  return url
+}
+
+

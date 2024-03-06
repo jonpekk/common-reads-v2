@@ -41,6 +41,7 @@ export default function BooksIndexPage() {
             >
               <BookCard
                 book={book.volumeInfo}
+                id={book.id}
               />
             </Card>
           ))

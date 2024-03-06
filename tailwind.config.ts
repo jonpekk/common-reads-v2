@@ -52,7 +52,10 @@ export default {
       }
     },
     maxWidth: {
-      "largest-screen": breakpoints["2xl"]
+      "largest-screen": breakpoints["2xl"],
+      "x-large": breakpoints.xl,
+      "large": breakpoints.lg,
+      "medium": breakpoints.md
     }
   },
   plugins: [],
