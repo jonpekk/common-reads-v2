@@ -19,7 +19,7 @@ function LinkButton({ href, type, children }: ILinkButtonProps) {
   }
 
   return (
-    <Link to={href} className={`${buttonBackground} hover:opacity-75 text-black py-2 px-4 rounded`}>{children}</Link>
+    <Link to={href} className={`${buttonBackground} hover:opacity-75 text-xs xs:text-base text-black py-2 px-4 rounded`}>{children}</Link>
   )
 }
 
